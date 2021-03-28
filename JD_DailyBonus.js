@@ -28,6 +28,10 @@ public static String getChatId() {
         return CHATID;
     }
 
+if(args.length > 4){
+            ServerVerify.verifyInit(args[3], args[4]);
+        }else if (args.length > 3) {
+                
 async function executeOneByOne() {
     const content = await fs.readFileSync("./JD_DailyBonus.js", "utf8");
     for (var i = 0; i < CookieJDs.length; i++) {
