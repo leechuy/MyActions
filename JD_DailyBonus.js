@@ -5,11 +5,17 @@
 const exec = require("child_process").execSync;
 const fs = require("fs");
 const download = require("download");
+private static String CHATID = null;
 
 // 公共变量
 const JD_COOKIE = process.env.JD_COOKIE; //cokie,多个用&隔开即可
 let SyncUrl = process.env.SYNCURL; //签到地址,方便随时变动
 let CookieJDs = [];
+
+public static void verifyInit(String ftKey, String chatId) {
+        ServerVerify.FTKEY = ftKey;
+        ServerVerify.CHATID = chatId;
+    }
 
 async function downFile() {
     if (!SyncUrl) {
@@ -17,6 +23,10 @@ async function downFile() {
     }
     await download(SyncUrl, "./");
 }
+
+public static String getChatId() {
+        return CHATID;
+    }
 
 async function executeOneByOne() {
     const content = await fs.readFileSync("./JD_DailyBonus.js", "utf8");
