@@ -23,3 +23,5 @@ jobs:
               env:
                   SYNCURL: ${{ secrets.SYNCURL }}
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
+                  TELEGRAMCHATID: ${{ secrets.TELEGRAMCHATID }}
+                  TELEGRAMBOTTOKEN: ${{ secrets.TELEGRAMBOTTOKEN }}
